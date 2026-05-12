@@ -1,0 +1,62 @@
+{
+  "name": "Coupon",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "store_id": {
+      "type": "string"
+    },
+    "discount_type": {
+      "type": "string",
+      "enum": [
+        "percentage",
+        "fixed"
+      ],
+      "default": "percentage"
+    },
+    "discount_value": {
+      "type": "number"
+    },
+    "min_order": {
+      "type": "number",
+      "default": 0
+    },
+    "max_uses": {
+      "type": "number"
+    },
+    "used_count": {
+      "type": "number",
+      "default": 0
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "all",
+        "specific"
+      ],
+      "default": "all",
+      "description": "Whether coupon applies to all products or specific ones"
+    },
+    "product_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Specific product IDs if scope is specific"
+    }
+  },
+  "required": [
+    "code",
+    "discount_value"
+  ]
+}

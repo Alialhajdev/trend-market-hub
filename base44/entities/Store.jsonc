@@ -1,0 +1,139 @@
+{
+  "name": "Store",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Store name"
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Store name in English"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-friendly slug"
+    },
+    "description": {
+      "type": "string",
+      "description": "Store description"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "Store logo"
+    },
+    "banner_url": {
+      "type": "string",
+      "description": "Store banner"
+    },
+    "owner_email": {
+      "type": "string",
+      "description": "Store owner email"
+    },
+    "email": {
+      "type": "string",
+      "description": "Store contact email"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "electronics",
+        "fashion",
+        "home",
+        "beauty",
+        "sports",
+        "food",
+        "books",
+        "digital",
+        "other"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "active",
+        "suspended",
+        "closed"
+      ],
+      "default": "pending"
+    },
+    "subscription_plan": {
+      "type": "string",
+      "enum": [
+        "free",
+        "pro",
+        "vip"
+      ],
+      "default": "free"
+    },
+    "commission_rate": {
+      "type": "number",
+      "description": "Platform commission percentage",
+      "default": 10
+    },
+    "rating": {
+      "type": "number",
+      "default": 0
+    },
+    "total_sales": {
+      "type": "number",
+      "default": 0
+    },
+    "total_products": {
+      "type": "number",
+      "default": 0
+    },
+    "theme_color": {
+      "type": "string",
+      "default": "#2563EB"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_verified": {
+      "type": "boolean",
+      "default": false
+    },
+    "banking_accounts": {
+      "type": "array",
+      "description": "Bank accounts for withdrawal (max 3)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "full_name": {
+            "type": "string"
+          },
+          "account_number": {
+            "type": "string"
+          },
+          "account_type": {
+            "type": "string",
+            "enum": [
+              "checking",
+              "savings",
+              "iban"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "name",
+    "owner_email"
+  ]
+}
